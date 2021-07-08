@@ -1,0 +1,11 @@
+instruções para build e executar a api
+
+// build dockerfile
+docker build -f Dockerfile -t frete-api .
+docker run --name frete-api -t -d -p 1337:1337 frete-api 
+docker compose up
+
+//conectando com container
+docker network connect freterapido_default frete-api
+docker exec -it frete-api bash
+go run main.go
